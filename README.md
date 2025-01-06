@@ -2,7 +2,7 @@
 
 [![Released under the MIT license.](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![All Contributors][all-contributors-badge]](#contributors-)
-[![PRs welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](.github/CONTRIBUTING)
+[![PRs welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](.github/CONTRIBUTING.md)
 [![Code of Conduct][coc-badge]][coc]
 
 A collection of reusable GitHub Actions workflows to be used by @dymexjs packages
