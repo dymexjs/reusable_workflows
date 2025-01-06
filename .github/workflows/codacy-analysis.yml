@@ -2,8 +2,8 @@ name: Codacy Security Scan Utils
 
 on:
   workflow_call:
-    secrets :
-      CODACY_API_TOKEN:
+    secrets:
+      codacy-api-token:
         required: true
 
 permissions: read-all
@@ -54,7 +54,7 @@ jobs:
         with:
           #project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           # or
-          api-token: ${{ secrets.CODACY_API_TOKEN }}
+          api-token: ${{ secrets.codacy-api-token }}
           coverage-reports: ./lcov.info
           # or a comma-separated list for multiple reports
           # coverage-reports: <PATH_TO_REPORT>, <PATH_TO_REPORT>
