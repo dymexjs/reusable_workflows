@@ -9,11 +9,6 @@ concurrency:
 
 jobs:
   publish:
-    permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the 
-      # updated package.json back to the repository.
-      # https://github.blog/changelog/2023-02-02-github-actions-updating-the-default-github_token-permissions-to-read-only/
-      contents: write
     name: publish
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
