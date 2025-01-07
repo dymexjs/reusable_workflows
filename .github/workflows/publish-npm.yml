@@ -2,6 +2,9 @@ name: Npm Publish Utils
 
 on:
   workflow_call:
+    secrets:
+      npm-token:
+        required: true
 
 permissions: read-all
 
@@ -27,6 +30,6 @@ jobs:
       - run: npm test
       - uses: JS-DevTools/npm-publish@v3
         with:
-          token: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.npm-token }}
           access: public
           provenance: true

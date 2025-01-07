@@ -5,6 +5,9 @@ on:
     branches: 
       - main
   workflow_call:
+    secrets:
+      github-token:
+        required: true
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
@@ -17,4 +20,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: JoshuaKGoldberg/all-contributors-auto-action@v0.5.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.github-token }}
