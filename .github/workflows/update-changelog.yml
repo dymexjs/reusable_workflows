@@ -24,11 +24,6 @@ jobs:
         with:
           ref: ${{ github.event.release.target_commitish }}
 
-      - name: Update package.json version
-        uses: jaywcjlove/github-action-package@main
-        with:
-          version: ${{ github.event.release.name }}
-
       - name: Update Changelog
         uses: stefanzweifel/changelog-updater-action@v1
         with:
@@ -39,4 +34,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: ${{ github.event.release.target_commitish }}
-          commit_message: Update CHANGELOG and package.json
+          commit_message: Update CHANGELOG
