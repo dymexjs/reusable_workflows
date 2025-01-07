@@ -9,6 +9,8 @@ on:
       github-token:
         required: true
 
+permissions: write-all
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
