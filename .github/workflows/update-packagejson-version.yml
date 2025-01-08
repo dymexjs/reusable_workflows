@@ -2,6 +2,9 @@ name: Update package.json version
 
 on:
   workflow_call:
+    secrets:
+      deploy-key:
+        required: true
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
@@ -16,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.release.target_commitish }}
+          ssh-key: ${{secrets.deploy-key}}
           
       - name: Update package.json version
         uses: jaywcjlove/github-action-package@main
